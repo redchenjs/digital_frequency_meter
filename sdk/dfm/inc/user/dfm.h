@@ -12,8 +12,8 @@
 #define DFM_GATE_TIME_TOTAL *(volatile uint32_t *)(0x43C00004)
 
 #define DFM_DATA_REG		*(volatile uint32_t *)(0x43C00008)
-#define DFM_DATA_REF_CLK	*(volatile uint32_t *)(0x43C00008)
-#define DFM_DATA_SIG_CLK	*(volatile uint32_t *)(0x43C0000C)
+#define DFM_DATA_SIG_CLK	*(volatile uint32_t *)(0x43C00008)
+#define DFM_DATA_REF_CLK	*(volatile uint32_t *)(0x43C0000C)
 
 #define DFM_REF_CLK_MHZ		(250000000)
 
