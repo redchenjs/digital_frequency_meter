@@ -1,6 +1,3 @@
-[submodule "repo/axi_video_gen"]
-	path = repo/axi_video_gen
-	url = git@github.com:redchenjs/axi_video_gen.git
-[submodule "repo/axi_video_out"]
-	path = repo/axi_video_out
-	url = git@github.com:redchenjs/axi_video_out.git
+[submodule "repo/axi_dfm"]
+        path = repo/axi_dfm
+        url = git@github.com:redchenjs/axi_dfm.git

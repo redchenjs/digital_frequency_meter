@@ -8,11 +8,11 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-#include "user/disp.h"
+#include "user/dfm.h"
 
 int main(void)
 {
-    xTaskCreate(disp_task, "dispT", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
+    xTaskCreate(dfm_task, "dfmT", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 
     vTaskStartScheduler();
 

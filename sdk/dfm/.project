@@ -3,7 +3,7 @@
 	<name>display</name>
 	<comment>Created by Vitis v2021.2</comment>
 	<projects>
-		<project>rgb2grey_freertos</project>
+		<project>dfm_freertos</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

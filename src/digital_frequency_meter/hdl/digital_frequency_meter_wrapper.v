@@ -1,15 +1,15 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-//Date        : Fri May 27 15:51:34 2022
+//Date        : Wed Jun  8 19:38:09 2022
 //Host        : ThinkBook running 64-bit Arch Linux
-//Command     : generate_target rgb2grey_wrapper.bd
-//Design      : rgb2grey_wrapper
+//Command     : generate_target digital_frequency_meter_wrapper.bd
+//Design      : digital_frequency_meter_wrapper
 //Purpose     : IP block netlist
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-module rgb2grey_wrapper
+module digital_frequency_meter_wrapper
    (BTN,
     DDR_addr,
     DDR_ba,
@@ -33,13 +33,7 @@ module rgb2grey_wrapper
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
     LED,
-    SDIO_clk,
-    SDIO_cmd,
-    SDIO_data,
-    TMDS_clk_n,
-    TMDS_clk_p,
-    TMDS_data_n,
-    TMDS_data_p);
+    SIG_IN);
   input [1:0]BTN;
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
@@ -63,13 +57,7 @@ module rgb2grey_wrapper
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
   output [3:0]LED;
-  output SDIO_clk;
-  inout SDIO_cmd;
-  inout [3:0]SDIO_data;
-  output TMDS_clk_n;
-  output TMDS_clk_p;
-  output [2:0]TMDS_data_n;
-  output [2:0]TMDS_data_p;
+  input SIG_IN;
 
   wire [1:0]BTN;
   wire [14:0]DDR_addr;
@@ -94,15 +82,9 @@ module rgb2grey_wrapper
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
   wire [3:0]LED;
-  wire SDIO_clk;
-  wire SDIO_cmd;
-  wire [3:0]SDIO_data;
-  wire TMDS_clk_n;
-  wire TMDS_clk_p;
-  wire [2:0]TMDS_data_n;
-  wire [2:0]TMDS_data_p;
+  wire SIG_IN;
 
-  rgb2grey rgb2grey_i
+  digital_frequency_meter digital_frequency_meter_i
        (.BTN(BTN),
         .DDR_addr(DDR_addr),
         .DDR_ba(DDR_ba),
@@ -126,11 +108,5 @@ module rgb2grey_wrapper
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         .LED(LED),
-        .SDIO_clk(SDIO_clk),
-        .SDIO_cmd(SDIO_cmd),
-        .SDIO_data(SDIO_data),
-        .TMDS_clk_n(TMDS_clk_n),
-        .TMDS_clk_p(TMDS_clk_p),
-        .TMDS_data_n(TMDS_data_n),
-        .TMDS_data_p(TMDS_data_p));
+        .SIG_IN(SIG_IN));
 endmodule
